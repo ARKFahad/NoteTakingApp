@@ -346,12 +346,14 @@ export default function App() {
                       onBlur={checkUsername}
                       placeholder="no duplicates allowed"
                     />
-                    <span className={`status ${usernameStatus}`}>
-                      {usernameStatus === "checking" ? "checking" : null}
-                      {usernameStatus === "available" ? "available" : null}
-                      {usernameStatus === "taken" ? "taken" : null}
-                      {usernameStatus === "error" ? "retry" : null}
-                    </span>
+                    {usernameStatus ? (
+                      <span className={`status ${usernameStatus}`}>
+                        {usernameStatus === "checking" ? "checking" : null}
+                        {usernameStatus === "available" ? "available" : null}
+                        {usernameStatus === "taken" ? "taken" : null}
+                        {usernameStatus === "error" ? "retry" : null}
+                      </span>
+                    ) : null}
                   </div>
                 </div>
                 <div className="row">
