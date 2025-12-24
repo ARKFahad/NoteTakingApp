@@ -1,0 +1,243 @@
+:root {
+  --bg: #d7e6ff;
+  --panel: #f7fbff;
+  --border: #1a1a1a;
+  --shadow: #000;
+  --accent: #2b61ff;
+  --accent2: #ff3bd4;
+  --text: #111;
+  --muted: #444;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  background: linear-gradient(180deg, #c7dcff 0%, #eef5ff 40%, #d7e6ff 100%);
+  color: var(--text);
+}
+
+.container {
+  max-width: 920px;
+  margin: 28px auto;
+  padding: 0 14px;
+}
+
+.topbar {
+  border: 2px solid var(--border);
+  background: linear-gradient(180deg, #ffffff 0%, #e9f1ff 100%);
+  box-shadow: 4px 4px 0 var(--shadow);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.badge {
+  width: 34px;
+  height: 34px;
+  border: 2px solid var(--border);
+  box-shadow: 2px 2px 0 var(--shadow);
+  background: radial-gradient(circle at 30% 30%, #fff 0%, #b7ccff 55%, #7aa2ff 100%);
+}
+
+.title {
+  display: grid;
+  line-height: 1.1;
+}
+
+.title strong {
+  font-size: 18px;
+  letter-spacing: 0.3px;
+}
+
+.title span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.clock {
+  font-size: 12px;
+  color: var(--muted);
+  border: 2px solid var(--border);
+  background: #fff;
+  padding: 6px 10px;
+  box-shadow: 2px 2px 0 var(--shadow);
+  white-space: nowrap;
+}
+
+.grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 14px;
+}
+
+.panel {
+  border: 2px solid var(--border);
+  background: var(--panel);
+  box-shadow: 4px 4px 0 var(--shadow);
+  padding: 12px;
+}
+
+.panel h2 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hr {
+  height: 2px;
+  background: var(--border);
+  margin: 10px 0;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.input, .textarea {
+  width: 100%;
+  border: 2px solid var(--border);
+  background: #fff;
+  padding: 10px;
+  font-size: 14px;
+  box-shadow: 2px 2px 0 var(--shadow);
+  outline: none;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn {
+  border: 2px solid var(--border);
+  background: linear-gradient(180deg, #ffffff 0%, #e7e7e7 100%);
+  box-shadow: 2px 2px 0 var(--shadow);
+  padding: 10px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0 var(--shadow);
+}
+
+.btn.primary {
+  background: linear-gradient(180deg, #dbe6ff 0%, #8fb0ff 100%);
+}
+
+.btn.danger {
+  background: linear-gradient(180deg, #ffd7d7 0%, #ff8b8b 100%);
+}
+
+.mini {
+  font-size: 12px;
+  padding: 6px 10px;
+}
+
+.counter {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.notesHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.search {
+  border: 2px solid var(--border);
+  box-shadow: 2px 2px 0 var(--shadow);
+  padding: 8px 10px;
+  width: 240px;
+  font-size: 13px;
+}
+
+.noteList {
+  display: grid;
+  gap: 10px;
+}
+
+.card {
+  border: 2px solid var(--border);
+  background: #fff;
+  box-shadow: 3px 3px 0 var(--shadow);
+  padding: 10px;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  height: 18px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
+  border-bottom: 2px solid var(--border);
+}
+
+.cardBody {
+  padding-top: 14px;
+  display: grid;
+  gap: 6px;
+}
+
+.cardTitle {
+  font-weight: 700;
+}
+
+.cardMeta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.cardContent {
+  white-space: pre-wrap;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.empty {
+  font-size: 14px;
+  color: var(--muted);
+  padding: 14px;
+  border: 2px dashed var(--border);
+  background: #fff;
+}
+
+.footer {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+  .search { width: 100%; }
+}
