@@ -13,6 +13,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => res.send("Retro Notes API running ✅"));
 app.use("/api/notes", notesRouter);
+app.use("/api/auth", authRouter);
 
 async function start() {
   try {
