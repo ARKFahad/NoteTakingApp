@@ -65,7 +65,7 @@ export default function App() {
   const fetchNotes = async () => {
     try {
       setError("");
-      const res = await fetch(`${API}/notes`);
+      const res = await fetch(`${API}/notes?userId=${encodeURIComponent(user.id)}`);
       if (!res.ok) throw new Error("Failed to load notes");
       const data = await res.json();
       setNotes(data);
@@ -102,7 +102,7 @@ export default function App() {
       const res = await fetch(`${API}/notes`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title: t, content })
+        body: JSON.stringify({ title: t, content, userId: user.id })
       });
       if (!res.ok) {
         const msg = await res.json().catch(() => ({}));
@@ -127,7 +127,10 @@ export default function App() {
     setNotes((prev) => prev.filter((n) => n._id !== id));
 
     try {
-      const res = await fetch(`${API}/notes/${id}`, { method: "DELETE" });
+      const res = await fetch(
+        `${API}/notes/${id}?userId=${encodeURIComponent(user.id)}`,
+        { method: "DELETE" }
+      );
       if (!res.ok) throw new Error("Failed to delete");
     } catch (e) {
       setNotes(old);
